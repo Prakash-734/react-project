@@ -6,7 +6,8 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="search">Search</div>
+      <div className="btn"><button>
+        Filter</button></div>
       <div className="res-container">
         
         {

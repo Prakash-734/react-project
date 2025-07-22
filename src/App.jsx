@@ -1,13 +1,17 @@
+import Body from "./Body";
+import Header from "./Header";
+
 function App() {
 
 
   return (
     <>
       
-      <h1>Hello World</h1>
+      <Header />
+      <Body />
         
     </>
   )
 }
 
-export default App
+export default App;

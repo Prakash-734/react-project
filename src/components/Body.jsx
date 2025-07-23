@@ -1,9 +1,23 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./shimmer";
 
 const Body = () => {
-  const [res, setRes] = useState(resList); 
+  const [res, setRes] = useState(resList);
+  const [isLoading, setIsLoading] = useState(true); 
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Shimmer /> ;
+  }
 
   return (
     <div className="body">
